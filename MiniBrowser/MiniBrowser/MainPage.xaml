@@ -24,24 +24,29 @@
             <Button Content="Call" HorizontalAlignment="Stretch" Margin="57,75,105,595" Name="makeCall" VerticalAlignment="Stretch" Width="Auto" IsEnabled="True" Click="makeCall_Click" />
         </Grid>-->
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="624*" />
-            </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="624*" />
+        </Grid.RowDefinitions>
 
-            <TextBox Grid.Row="0" Grid.ColumnSpan="2" Name="taskSearch" VerticalAlignment="Stretch" />
-            <Button Grid.Row="2" Content="search" Click="Search_Click" />
-            <TextBlock Name="ResultsLabel" Text="Search for tasks" TextWrapping="Wrap" Margin="12,0,110,483" Grid.Row="3" Grid.ColumnSpan="2" />
-
-
-        </Grid>
+        <TextBox Grid.Row="0" Grid.ColumnSpan="2" Name="taskSearch" VerticalAlignment="Stretch" />
+        <Button Grid.Row="2" Content="search" Click="Search_Click" />
+        <TextBlock Name="ResultsLabel" Text="Search for tasks" TextWrapping="Wrap" Margin="12,0,110,483" Grid.Row="3" Grid.ColumnSpan="2" />
+        <ListBox Name="ContactResultsData" ItemsSource="{Binding}"  Height="300" Margin="24,0,0,0" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Name="ContactResults" Text="{Binding Path = name}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Margin="18,8,0,0" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->

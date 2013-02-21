@@ -19,6 +19,7 @@ namespace MiniBrowser
     {
         PhoneCallTask phoneTask = null;
         // Constructor
+        List<Task> tasks = new List<Task>();
         public MainPage()
         {
             InitializeComponent();
@@ -30,19 +31,15 @@ namespace MiniBrowser
             phoneTask.DisplayName = "Liisa";
             phoneTask.PhoneNumber = "+358408255902"; // put your desired phone number here
             phoneTask.Show();
+            //ContactResultsData.DataContext = null;
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-
-            //ResultsLabel.Text = "results are loading...";
-            //ResultsData.DataContext = null;
-
-            //Contacts cons = new Contacts();
-
-            //cons.SearchCompleted += new EventHandler<ContactsSearchEventArgs>(Contacts_SearchCompleted);
-
-            //cons.SearchAsync(contactFilterString.Text, contactFilterKind, "Contacts Test #1");
+            ResultsLabel.Text = "Searching for tasks";
+            Task task = new Task("lol");
+            tasks.Add(task);
+            ContactResultsData.DataContext = tasks;
         }
     }
 }
