@@ -165,10 +165,10 @@ namespace MiniBrowser
         {
            
         }
-
-        private void image1_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        private void Create_task(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("/Create_task.xaml",UriKind.Relative));
+        }
         }
     }
 }

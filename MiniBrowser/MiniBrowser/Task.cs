@@ -20,9 +20,11 @@ namespace MiniBrowser
             get { return _name; }
         }
 
-        public Task(String name)
+        String description { get; set; }
+        public Task(String name, String des)
         {
             _name = name;
+            this.description = des;
         }
 
     }
