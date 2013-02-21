@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Collections.Generic;
 
 namespace MiniBrowser
 {
@@ -15,11 +16,17 @@ namespace MiniBrowser
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        public List<Task> Favourites { get; set; }
         
         public User(string Username, string Password)
         {
             this.Username = Username;
             this.Password = Password;
+
+            this.Favourites = new List<Task>();
+            this.Favourites.Add(new Task("Madness"));
+            this.Favourites.Add(new Task("Sparta"));
+
         }
     }
 }
