@@ -17,6 +17,8 @@ namespace MiniBrowser
 {
     public partial class App : Application
     {
+
+        public static User User;
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
