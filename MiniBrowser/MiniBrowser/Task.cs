@@ -14,9 +14,11 @@ namespace MiniBrowser
     public class Task
     {
         String name { get; set; }
-        public Task(String name)
+        String description { get; set; }
+        public Task(String name, String des)
         {
             this.name = name;
+            this.description = des;
         }
 
     }

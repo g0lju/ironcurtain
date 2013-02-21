@@ -25,6 +25,7 @@ namespace MiniBrowser
         /// <returns>The root frame of the Phone Application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
 
+        public static List<Task> tasks = new List<Task>();
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>

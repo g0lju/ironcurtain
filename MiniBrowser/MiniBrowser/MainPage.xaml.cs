@@ -19,7 +19,7 @@ namespace MiniBrowser
     {
         PhoneCallTask phoneTask = null;
         // Constructor
-        List<Task> tasks = new List<Task>();
+        
         public MainPage()
         {
             InitializeComponent();
@@ -37,9 +37,13 @@ namespace MiniBrowser
         private void Search_Click(object sender, RoutedEventArgs e)
         {
             ResultsLabel.Text = "Searching for tasks";
-            Task task = new Task("lol");
-            tasks.Add(task);
-            ContactResultsData.DataContext = tasks;
+            Task task = new Task("lol", "lol");
+            App.tasks.Add(task);
+            //ContactResultsData.DataContext = tasks;
+        }
+        private void Create_task(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Create_task.xaml",UriKind.Relative));
         }
     }
 }
